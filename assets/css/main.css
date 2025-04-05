@@ -1,6 +1,6 @@
 /* Markdown */
 :root {
-  --maincolor: red;
+  --maincolor: blue;
   --bordercl: rebeccapurple;
   --callouctcolor: dodgerblue;
   --hovercolor: navy;
@@ -46,7 +46,6 @@ blockquote {
 }
 
 a {
-  border-bottom: 3px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
 }
@@ -57,15 +56,16 @@ a:hover {
 }
 
 ul {
-  list-style: none;
+  /* list-style: none; */
   padding-left: 2ch;
 }
 
-ul li {
+/* ul li {
   text-indent: -2ch;
-}
+} */
+
 ul > li::before {
-  content: "* ";
+  /* content: "* "; */
   font-weight: bold;
 }
 
@@ -133,7 +133,7 @@ pre code {
   margin-bottom: 4em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: 1200px;
   padding: 0 1ch;
   word-wrap: break-word;
 }
@@ -149,7 +149,9 @@ header {
 
 header .main {
   font-size: 1.5rem;
+  font-weight: bold;
 }
+
 h1,
 h2,
 h3,
@@ -202,7 +204,6 @@ h6::before {
 }
 
 .toc {
-  background-color: #ececec;
   border-radius: 5px;
   color: #232333;
   flex: 0 0 auto;
@@ -219,7 +220,6 @@ h6::before {
 footer {
   display: flex;
   align-items: center;
-  border-top: 0.4rem dotted var(--bordercl);
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
@@ -445,4 +445,11 @@ table td {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+nav > a {
+  padding: 0 10px;
+  color: var(--maincolor);
+  font-weight: bold;
+  text-decoration: none;
 }
