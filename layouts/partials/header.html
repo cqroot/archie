@@ -115,4 +115,45 @@
 	<script src="{{ absURL . }}"></script>
 	{{- end }}
 	{{- end }}
+
+	<!-- Scroll to the Top -->
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const scrollBtn = document.querySelector('.scroll-top-btn');
+		const scrollThreshold = 200;
+
+		const handleScroll = () => {
+			const showClass = 'show';
+			
+			if (window.scrollY > scrollThreshold) {
+				scrollBtn.classList.add(showClass);
+			} else {
+				scrollBtn.classList.remove(showClass);
+			}
+		};
+
+		function debounce(func, wait = 100) {
+			let timeout;
+			return function executedFunction() {
+				const later = () => {
+					clearTimeout(timeout);
+					func();
+				};
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+			};
+		}
+
+		window.addEventListener('scroll', debounce(handleScroll));
+		
+		handleScroll();
+
+		scrollBtn.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	});
+	</script>
 </head>

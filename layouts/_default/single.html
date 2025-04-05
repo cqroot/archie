@@ -49,6 +49,9 @@
     {{- if eq ($.Scratch.Get "isDisqus") true -}}
     {{- partial "disqus.html" . -}}
     {{- end -}}
+
+    <!-- Scroll to the Top -->
+    <button class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>
   </article>
 </main>
 {{ end }}
