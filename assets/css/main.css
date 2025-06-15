@@ -1,6 +1,6 @@
 /* Markdown */
 :root {
-  --color-primary: blue;
+  --color-primary: #000080;
   --color-bg-primary: white;
   --color-bg-primary-dark: #202124;
   --color-border-light: #ececec;
@@ -59,6 +59,11 @@ a {
 a:hover {
   background-color: var(--hovercolor);
   color: #fff;
+}
+
+.toc a:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 ul {
@@ -136,6 +141,25 @@ pre code {
     calc(100vw - 2 * var(--toc-width) - 10px),
     calc(100% - 2 * var(--toc-width) - 10px)
   );
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    margin-left: 20px;
+    margin-right: 0;
+    max-width: min(
+      calc(100vw - var(--toc-width) - 20px),
+      calc(100% - var(--toc-width) - 20px)
+    );
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+  }
 }
 
 /* Header */
@@ -234,6 +258,13 @@ h6::before {
   padding-top: 20px;
   right: 0;
   max-width: var(--toc-width);
+  font-size: 13px;
+}
+
+@media screen and (max-width: 800px) {
+  .toc {
+    position: static;
+  }
 }
 
 /* Footer */
